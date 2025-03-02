@@ -524,7 +524,7 @@ button {
   background-color: #31d0aa;
 }
 
-.footer-Subscribe {
+.footer-subscribe {
   margin-left: auto;
   align-items: baseline;
 }
@@ -542,6 +542,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 24px;
 }
 
 .footer-input {
@@ -551,6 +552,12 @@ button {
   height: 40px;
   background-color: transparent;
   outline: transparent;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  padding-left: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
 }
 
 .footer-input:focus {
@@ -561,8 +568,8 @@ button {
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
-  color: #fff;
   margin: 8px 16px;
+  color: #ffffff;
 }
 
 .footer-btn-input {
@@ -579,7 +586,7 @@ button {
   text-align: center;
   color: #fff;
   border-radius: 4px;
-  width: 165px;
+  min-width: 165px;
   height: 40px;
   background-color: #4d5ae5;
   margin-left: 24px;
@@ -609,7 +616,7 @@ button {
   visibility: hidden;
   pointer-events: none;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    vicibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-open {
@@ -640,13 +647,18 @@ button {
 }
 
 .close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e7e9fc;
   padding: 0;
   line-height: 0;
   position: absolute;
   top: 24px;
   right: 24px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px dashed #9747ff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   width: 24px;
   height: 24px;
@@ -657,13 +669,13 @@ button {
 
 .close-btn:focus,
 .close-btn:hover {
+  background-color: #404bbf;
   fill: #fff;
+  border: none;
 }
 
-.close-btn:focus,
-.close-btn:hover {
-  background-color: #404bbf;
-  border-radius: none;
+.close-btn-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-text {
@@ -677,9 +689,10 @@ button {
 }
 
 .modal-container-block {
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 .modal-form-label {
+  line-height: 1.17;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.16;
@@ -692,6 +705,8 @@ button {
   position: relative;
 }
 .modal-form-input {
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: transparent;
   width: 100%;
   height: 40px;
   border: 1px solid rgba(46, 47, 66, 0.4);
@@ -717,6 +732,7 @@ button {
 }
 
 .modal-form-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   position: absolute;
   fill: #2e2f42;
   top: 50%;
@@ -724,7 +740,20 @@ button {
   transform: translateY(-50%);
 }
 
+.user-comment {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  background-color: transparent;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .custom-checkbox {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 2px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   width: 16px;
@@ -738,10 +767,10 @@ button {
 }
 
 .label-checkbox {
+  line-height: 1.17;
   cursor: pointer;
   font-weight: 400;
   font-size: 12px;
-  line-height: 1.16;
   letter-spacing: 0.04em;
   color: #8e8f99;
 }
@@ -767,7 +796,7 @@ button {
   margin-bottom: 14px;
 }
 
-.user-coment {
+.user-comment {
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   width: 100%;
@@ -776,12 +805,12 @@ button {
   resize: none;
 }
 
-.user-coment:focus {
+.user-comment:focus {
   border: 1px solid #4d5ae5;
   outline: transparent;
 }
 
-.user-coment::placeholder {
+.user-comment::placeholder {
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.04em;
@@ -791,7 +820,9 @@ button {
 
 .backdrop-btn {
   font-family: inherit;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
   border-radius: 4px;
   padding: 16px 32px;
@@ -800,13 +831,13 @@ button {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   background-color: #4d5ae5;
   border: none;
-  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   text-align: center;
   color: #fff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop-btn:hover,
